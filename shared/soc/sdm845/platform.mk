@@ -17,6 +17,12 @@
 # Inherit shared makefile
 $(call inherit-product, device/qcom/mainline/shared/common.mk)
 
+# BootControl HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609
