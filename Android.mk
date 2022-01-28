@@ -20,12 +20,11 @@
 # to only building on ARM if they include assembly. Individual makefiles
 # are responsible for having their own logic, for fine-grained control.
 
-ifneq ($(filter db845c pixel3_mainline, $(TARGET_BOARD_PLATFORM)),)
 
 LOCAL_PATH := $(call my-dir)
 
 # If some modules are built directly from this directory (not subdirectories),
 # their rules should be written here.
-
-include $(call all-makefiles-under,$(LOCAL_PATH))
+ifneq ($(filter $(LOCAL_PATH),$(PRODUCT_SOONG_NAMESPACES)),)
+include $(call first-makefiles-under,$(LOCAL_PATH))
 endif
