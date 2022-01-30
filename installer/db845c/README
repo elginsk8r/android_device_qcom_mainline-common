@@ -40,7 +40,7 @@ Flash the board:
 ----------------
 Once the board is in fastboot mode, you can then flash bootloader
 binaries and AOSP images by running the following script from
-device/linaro/dragonboard/installer/db845c/ directory:
+device/qcom/mainline/installer/db845c/ directory:
 
   $ ./flash-all-aosp.sh
 
@@ -67,7 +67,7 @@ button. Then re-connect USB-C cable. There will be no HDMI
 display output in recovery mode, and initially no serial output.
 
 Then run the recovery script from the
-device/linaro/dragonboard/installer/db845c/ directory:
+device/qcom/mainline/installer/db845c/ directory:
 
   $ ./recovery.sh
 

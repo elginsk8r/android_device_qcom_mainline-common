@@ -2,7 +2,7 @@ ifneq ($(filter db845c, $(TARGET_BOARD_PLATFORM)),)
 
 LOCAL_PATH := $(call my-dir)
 
-include device/linaro/dragonboard/utils.mk
+include device/qcom/mainline/utils.mk
 
 # Firmware files copied over from
 # http://releases.linaro.org/96boards/dragonboard845c/qualcomm/firmware/RB3_firmware_20190529180356-v3.zip

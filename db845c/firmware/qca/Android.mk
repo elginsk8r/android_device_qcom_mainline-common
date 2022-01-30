@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-include device/linaro/dragonboard/utils.mk
+include device/qcom/mainline/utils.mk
 
 # QCA firmware files copied from
 # https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/qca

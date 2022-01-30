@@ -1,9 +1,9 @@
-PIXEL3_KERNEL_DIR := device/linaro/dragonboard-kernel/pixel3_mainline/
+PIXEL3_KERNEL_DIR := device/qcom/mainline-kernel/pixel3_mainline/
 
 # Inherit the full_base and device configurations
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, device/linaro/dragonboard/pixel3_mainline/device.mk)
-$(call inherit-product, device/linaro/dragonboard/device-common.mk)
+$(call inherit-product, $(LOCAL_PATH)/pixel3_mainline/device.mk)
+$(call inherit-product, $(LOCAL_PATH)/device-common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Product overrides

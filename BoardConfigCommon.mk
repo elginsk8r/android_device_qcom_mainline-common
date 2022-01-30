@@ -67,11 +67,11 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HAVE_BLUETOOTH := true
 
 BOARD_SEPOLICY_DIRS += \
-    device/linaro/dragonboard/sepolicy \
+    device/qcom/mainline/sepolicy \
     system/bt/vendor_libs/linux/sepolicy
 
-DEVICE_MANIFEST_FILE := device/linaro/dragonboard/manifest.xml
-DEVICE_MATRIX_FILE := device/linaro/dragonboard/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := device/qcom/mainline/manifest.xml
+DEVICE_MATRIX_FILE := device/qcom/mainline/compatibility_matrix.xml
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)

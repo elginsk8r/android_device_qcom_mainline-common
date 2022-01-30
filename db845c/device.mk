@@ -15,7 +15,7 @@
 #
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/linaro/dragonboard
+    device/qcom/mainline
 
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
@@ -37,11 +37,11 @@ endif
 PRODUCT_COPY_FILES := \
     $(DB845C_KERNEL_DIR)/Image.gz:kernel \
     $(DB845C_KERNEL_DIR)/sdm845-db845c.dtb:dtb.img \
-    device/linaro/dragonboard/fstab.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.db845c \
-    device/linaro/dragonboard/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.db845c \
-    device/linaro/dragonboard/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.db845c.rc \
-    device/linaro/dragonboard/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.db845c.usb.rc \
-    device/linaro/dragonboard/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/db845c.kl
+    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.db845c \
+    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.db845c \
+    $(LOCAL_PATH)/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.db845c.rc \
+    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.db845c.usb.rc \
+    $(LOCAL_PATH)/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/db845c.kl
 
 # Build generic Audio HAL
 PRODUCT_PACKAGES := audio.primary.db845c
@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     tqftpserv
 
 PRODUCT_COPY_FILES += \
-    device/linaro/dragonboard/qcom/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qcom.rc
+    $(LOCAL_PATH)/qcom/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qcom.rc
 
 # Install scripts to set Ethernet MAC address
 PRODUCT_COPY_FILES += \

@@ -142,7 +142,7 @@ PRODUCT_COPY_FILES += \
 
 # Copy hardware config file(s)
 PRODUCT_COPY_FILES +=  \
-        device/linaro/dragonboard/etc/permissions/android.software.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.xml
+    $(LOCAL_PATH)/etc/permissions/android.software.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.xml
 
 # Memtrack
 PRODUCT_PACKAGES += \

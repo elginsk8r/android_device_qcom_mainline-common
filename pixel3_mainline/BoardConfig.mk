@@ -1,4 +1,4 @@
-include device/linaro/dragonboard/BoardConfigCommon.mk
+include device/qcom/mainline/BoardConfigCommon.mk
 
 # Board Information
 TARGET_BOOTLOADER_BOARD_NAME := pixel3_mainline

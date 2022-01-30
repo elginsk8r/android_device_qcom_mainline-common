@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-include device/linaro/dragonboard/utils.mk
+include device/qcom/mainline/utils.mk
 
 firmware_files_venus :=	\
     venus.b00		\
