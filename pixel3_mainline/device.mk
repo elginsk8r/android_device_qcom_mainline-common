@@ -25,6 +25,11 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pixel3_mainline.usb.rc \
     $(LOCAL_PATH)/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/pixel3_mainline.kl
 
+# Dynamic partitions
+PRODUCT_BUILD_SUPER_PARTITION := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
+
 ifneq (,$(wildcard $(PIXEL3_KERNEL_DIR)/Image.gz-dtb))
     PRODUCT_COPY_FILES += $(PIXEL3_KERNEL_DIR)/Image.gz-dtb:kernel
     PIXEL3_KERNEL_FOUND := true
