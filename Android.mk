@@ -24,7 +24,7 @@ LOCAL_PATH := $(call my-dir)
 
 # If some modules are built directly from this directory (not subdirectories),
 # their rules should be written here.
-ifneq ($(filter db845c pixel3_mainline, $(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(LOCAL_PATH),$(PRODUCT_SOONG_NAMESPACES)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
