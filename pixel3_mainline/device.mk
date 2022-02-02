@@ -18,13 +18,6 @@
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-PRODUCT_COPY_FILES := \
-    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.pixel3_mainline \
-    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.pixel3_mainline \
-    $(LOCAL_PATH)/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pixel3_mainline.rc \
-    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pixel3_mainline.usb.rc \
-    $(LOCAL_PATH)/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/pixel3_mainline.kl
-
 # Dynamic partitions
 PRODUCT_BUILD_SUPER_PARTITION := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -36,9 +29,6 @@ ifneq (,$(wildcard $(PIXEL3_KERNEL_DIR)/Image.gz-dtb))
 else
     PIXEL3_KERNEL_FOUND := false
 endif
-
-# Build generic Audio HAL
-PRODUCT_PACKAGES := audio.primary.pixel3_mainline
 
 # Copy firmware files
 $(call inherit-product-if-exists, $(LOCAL_PATH)/firmware/device.mk)

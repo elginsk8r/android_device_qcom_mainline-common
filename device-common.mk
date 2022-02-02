@@ -99,6 +99,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.bluetooth.default \
+    audio.primary.$(TARGET_BOARD_PLATFORM) \
     audio.usb.default \
     audio.r_submix.default
 
@@ -139,6 +140,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/etc/permissions/android.software.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.xml
 
+# Copy keylayout file(s)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(TARGET_BOARD_PLATFORM).kl
+
 # Memtrack
 PRODUCT_PACKAGES += \
     memtrack.default \
@@ -167,9 +172,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_HOST_PACKAGES := \
     mkbootimg
 
+# Init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.$(TARGET_BOARD_PLATFORM) \
+    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(TARGET_BOARD_PLATFORM) \
+    $(LOCAL_PATH)/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(TARGET_BOARD_PLATFORM).rc \
+    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(TARGET_BOARD_PLATFORM).usb.rc \
+    $(LOCAL_PATH)/ueventd.common.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+
 # Copy standard platform config files
 PRODUCT_COPY_FILES +=  \
-    $(LOCAL_PATH)/ueventd.common.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
     frameworks/native/data/etc/android.software.cts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.cts.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/android.software.backup.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.backup.xml \

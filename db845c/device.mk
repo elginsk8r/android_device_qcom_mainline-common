@@ -36,20 +36,12 @@ endif
 
 PRODUCT_COPY_FILES := \
     $(DB845C_KERNEL_DIR)/Image.gz:kernel \
-    $(DB845C_KERNEL_DIR)/sdm845-db845c.dtb:dtb.img \
-    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.db845c \
-    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.db845c \
-    $(LOCAL_PATH)/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.db845c.rc \
-    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.db845c.usb.rc \
-    $(LOCAL_PATH)/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/db845c.kl
+    $(DB845C_KERNEL_DIR)/sdm845-db845c.dtb:dtb.img
 
 # Dynamic partitions
 PRODUCT_BUILD_SUPER_PARTITION := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
-
-# Build generic Audio HAL
-PRODUCT_PACKAGES := audio.primary.db845c
 
 # BootControl HAL
 PRODUCT_PACKAGES += \
