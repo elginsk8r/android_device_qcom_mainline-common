@@ -173,12 +173,11 @@ PRODUCT_HOST_PACKAGES := \
     mkbootimg
 
 # Init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.$(TARGET_BOARD_PLATFORM) \
-    $(LOCAL_PATH)/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(TARGET_BOARD_PLATFORM) \
-    $(LOCAL_PATH)/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(TARGET_BOARD_PLATFORM).rc \
-    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(TARGET_BOARD_PLATFORM).usb.rc \
-    $(LOCAL_PATH)/ueventd.common.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+PRODUCT_PACKAGES += \
+    fstab.$(TARGET_BOARD_PLATFORM) \
+    init.$(TARGET_BOARD_PLATFORM).rc \
+    init.$(TARGET_BOARD_PLATFORM).usb.rc \
+    ueventd.$(TARGET_BOARD_PLATFORM).rc
 
 # Copy standard platform config files
 PRODUCT_COPY_FILES +=  \
