@@ -174,7 +174,6 @@ PRODUCT_HOST_PACKAGES := \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.$(TARGET_BOARD_PLATFORM) \
     init.$(TARGET_BOARD_PLATFORM).rc \
     init.$(TARGET_BOARD_PLATFORM).usb.rc \
     ueventd.$(TARGET_BOARD_PLATFORM).rc
