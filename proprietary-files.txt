@@ -1,0 +1,45 @@
+# All unpinned blobs below are extracted from linux-firmware.git
+
+# Adreno Firmware
+qcom/a300_pfp.fw:vendor/firmware/a300_pfp.fw
+qcom/a300_pm4.fw:vendor/firmware/a300_pm4.fw
+qcom/a530_pfp.fw:vendor/firmware/a530_pfp.fw
+qcom/a530_pm4.fw:vendor/firmware/a530_pm4.fw
+qcom/a530_zap.b00:vendor/firmware/a530_zap.b00
+qcom/a530_zap.b01:vendor/firmware/a530_zap.b01
+qcom/a530_zap.b02:vendor/firmware/a530_zap.b02
+qcom/a530_zap.mdt:vendor/firmware/a530_zap.mdt
+qcom/a530v3_gpmu.fw2:vendor/firmware/a530v3_gpmu.fw2
+qcom/a630_gmu.bin:vendor/firmware/a630_gmu.bin
+qcom/a630_sqe.fw:vendor/firmware/a630_sqe.fw
+qcom/a650_gmu.bin:vendor/firmware/a650_gmu.bin
+qcom/a650_sqe.fw:vendor/firmware/a650_sqe.fw
+qcom/a660_gmu.bin:vendor/firmware/a660_gmu.bin
+qcom/a660_sqe.fw:vendor/firmware/a660_sqe.fw
+qcom/sdm845/a630_zap.mbn:vendor/firmware/sdm845/a630_zap.mbn
+qcom/sm8250/a650_zap.mbn:vendor/firmware/sm8250/a650_zap.mbn
+
+# ADSP
+qcom/sdm845/adsp.mbn:vendor/firmware/sdm845/adsp.mbn
+qcom/sdm845/adspr.jsn:vendor/firmware/sdm845/adspr.jsn
+qcom/sdm845/adspua.jsn:vendor/firmware/sdm845/adspua.jsn
+qcom/sdm845/cdsp.mbn:vendor/firmware/sdm845/cdsp.mbn
+qcom/sdm845/cdspr.jsn:vendor/firmware/sdm845/cdspr.jsn
+qcom/sm8250/adsp.mbn:vendor/firmware/sm8250/adsp.mbn
+qcom/sm8250/adspr.jsn:vendor/firmware/sm8250/adspr.jsn
+qcom/sm8250/adspua.jsn:vendor/firmware/sm8250/adspua.jsn
+qcom/sm8250/cdsp.mbn:vendor/firmware/sm8250/cdsp.mbn
+qcom/sm8250/cdspr.jsn:vendor/firmware/sm8250/cdspr.jsn
+
+# Bluetooth
+qca/crbtfw21.tlv:vendor/firmware/qca/crbtfw21.tlv
+qca/crnv21.bin:vendor/firmware/qca/crnv21.bin
+
+# Modem
+qcom/sdm845/mba.mbn:vendor/firmware/sdm845/mba.mbn
+qcom/sdm845/modem.mbn:vendor/firmware/sdm845/modem.mbn
+qcom/sdm845/modemuw.jsn:vendor/firmware/sdm845/modemuw.jsn
+
+# WiFi
+ath10k/WCN3990/hw1.0/firmware-5.bin:vendor/firmware/firmware-5.bin
+ath10k/WCN3990/hw1.0/wlanmdsp.mbn:vendor/firmware/wlanmdsp.mbn
