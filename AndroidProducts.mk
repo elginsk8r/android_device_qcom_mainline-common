@@ -12,11 +12,14 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/db845c.mk \
     $(LOCAL_DIR)/db845c_mini.mk \
+    $(LOCAL_DIR)/msm8916.mk \
+    $(LOCAL_DIR)/msm8916_mini.mk \
     $(LOCAL_DIR)/rb5.mk \
     $(LOCAL_DIR)/rb5_mini.mk \
     $(LOCAL_DIR)/sm8450_mini.mk \
 
 COMMON_LUNCH_CHOICES := \
-    db845c-userdebug \
+    db845c-userdebug \ \
+    msm8916-userdebug \
     rb5-userdebug \
 
