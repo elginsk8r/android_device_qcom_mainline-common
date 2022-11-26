@@ -19,7 +19,25 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/sm8450_mini.mk \
 
 COMMON_LUNCH_CHOICES := \
-    db845c-userdebug \ \
+    db845c-userdebug \
     msm8916-userdebug \
-    rb5-userdebug \
+    rb5-userdebug
+
+ifneq ($(wildcard $(SRC_EVERVOLV_DIR)/config/common_full_tablet_wifionly.mk),)
+
+PRODUCT_MAKEFILES += \
+    $(LOCAL_DIR)/ev_db845c.mk \
+    $(LOCAL_DIR)/ev_db845c_mini.mk \
+    $(LOCAL_DIR)/ev_msm8916.mk \
+    $(LOCAL_DIR)/ev_msm8916_mini.mk \
+    $(LOCAL_DIR)/ev_rb5.mk \
+    $(LOCAL_DIR)/ev_rb5_mini.mk \
+    $(LOCAL_DIR)/ev_sm8450_mini.mk \
+
+COMMON_LUNCH_CHOICES += \
+    ev_db845c-userdebug \
+    ev_msm8916-userdebug \
+    ev_rb5-userdebug
+
+endif
 
