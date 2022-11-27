@@ -19,6 +19,7 @@ BOARD_KERNEL_CMDLINE := earlycon firmware_class.path=/vendor/firmware/ androidbo
 BOARD_KERNEL_CMDLINE += init=/init androidboot.boot_devices=soc@0/7824900.sdhci printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += deferred_probe_timeout=30
 BOARD_KERNEL_CMDLINE += qcom_geni_serial.con_enabled=1
+TARGET_NO_KERNEL := false
 
 # Image Configuration
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
@@ -29,5 +30,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3145728000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12138278912
 
 # Recovery
+TARGET_NO_RECOVERY := false
 TARGET_RECOVERY_FSTAB := device/linaro/dragonboard/recovery/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
