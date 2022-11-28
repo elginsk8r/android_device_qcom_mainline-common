@@ -217,9 +217,9 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.secure_lock_screen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.secure_lock_screen.xml
 
-# Copy firmware files
-$(call inherit-product-if-exists, $(LOCAL_PATH)/firmware/device.mk)
-
 PRODUCT_SOONG_NAMESPACES += \
     device/qcom/mainline \
     external/mesa3d
+
+# Copy firmware files
+$(call inherit-product-if-exists, vendor/qcom/mainline/mainline-vendor.mk)

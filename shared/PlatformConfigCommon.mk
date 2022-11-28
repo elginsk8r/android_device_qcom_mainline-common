@@ -61,3 +61,6 @@ ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT_PIC := true
   endif
 endif
+
+# inherit from the proprietary version
+-include vendor/qcom/mainline/BoardConfigVendor.mk
