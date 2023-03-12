@@ -13,10 +13,12 @@ PRODUCT_MAKEFILES := \
     axolotl:$(LOCAL_DIR)/axolotl/axolotl.mk \
     beryllium:$(LOCAL_DIR)/beryllium/beryllium.mk \
     enchilada:$(LOCAL_DIR)/enchilada/enchilada.mk \
+    idol3:$(LOCAL_DIR)/idol3/idol3.mk \
     idol347:$(LOCAL_DIR)/idol347/idol347.mk
 
 COMMON_LUNCH_CHOICES := \
     axolotl-userdebug \
     beryllium-userdebug \
     enchilada-userdebug \
+    idol3-userdebug \
     idol347-userdebug
