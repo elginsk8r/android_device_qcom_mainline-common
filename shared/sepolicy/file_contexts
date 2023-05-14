@@ -20,6 +20,7 @@
 /sys/devices/platform/soc@0/c440000.spmi/spmi-0/0-00/c440000.spmi:pmic@0:rtc@6000/rtc	u:object_r:sysfs_rtc:s0
 
 /sys/class/backlight(/.*)?								u:object_r:sysfs_lights:s0
+/sys/class/leds(/.*)?									u:object_r:sysfs_lights:s0
 /sys/devices/platform/soc@0/c440000.spmi/spmi-0/0-03/c440000.spmi:pmic@3:leds@d800/backlight	u:object_r:sysfs_lights:s0
 
 /sys/class/power_supply(/.*)?								u:object_r:sysfs_power:s0
@@ -40,8 +41,8 @@
 
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software			u:object_r:hal_gatekeeper_default_exec:s0
 /vendor/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service\.minigbm_msm		u:object_r:hal_graphics_allocator_default_exec:s0
+/vendor/bin/hw/android\.hardware\.lights-service					u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android\.hardware\.vibrator@1\.1-service\.sdm845				u:object_r:hal_vibrator_default_exec:s0
-/vendor/bin/hw/android\.hardware\.light@2\.0-service					u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android.hardware.vibrator@1.1-service.ff					u:object_r:hal_vibrator_default_exec:s0
 /vendor/bin/pd-mapper									u:object_r:pd_mapper_exec:s0
 /vendor/bin/qrtr-cfg									u:object_r:qrtr_exec:s0

@@ -26,8 +26,5 @@ PRODUCT_COPY_FILES := \
 # Build generic Audio HAL
 PRODUCT_PACKAGES := audio.primary.hammerhead
 
-# Build generic lights HAL
-PRODUCT_PACKAGES += lights.hammerhead
-
 # Create mountpoints and symlinks for firmware files
 PRODUCT_PACKAGES += hammerhead_firmware
