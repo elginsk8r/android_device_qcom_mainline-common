@@ -221,5 +221,5 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, $(LOCAL_PATH)/firmware/device.mk)
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/generic/sdm845 \
+    device/qcom/mainline \
     external/mesa3d

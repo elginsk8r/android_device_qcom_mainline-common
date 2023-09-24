@@ -1,4 +1,4 @@
-# device/generic/sdm845 (AOSP device config for SDM845 devices)
+# device/qcom/mainline (AOSP device config for SDM845 devices)
 
 This device repo aims to support booting AOSP on SDM845 devices supported by the mainline Linux kernel.
 
