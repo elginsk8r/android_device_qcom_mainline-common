@@ -1,4 +1,4 @@
-include device/generic/msm8916/shared/BoardConfig.mk
+include device/qcom/mainline/platform/msm8916/BoardConfig.mk
 
 # Board Information
 TARGET_BOOTLOADER_BOARD_NAME := idol3

@@ -22,7 +22,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := device/qcom/mainline/overlay
 
 # Build and run only ART
 PRODUCT_RUNTIMES := runtime_libart_default
@@ -55,8 +55,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gralloc=minigbm_msm \
     ro.hardware.hwcomposer=drm \
-    debug.sf.no_hw_vsync=1 \
-    ro.opengles.version=196608
+    debug.sf.no_hw_vsync=1
 
 #
 # Hardware Composer HAL
@@ -90,8 +89,7 @@ PRODUCT_PACKAGES += \
     tqftpserv
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vendor/init.vendor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rc \
-    $(LOCAL_PATH)/etc/fstab.zram:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.zram
+    device/qcom/mainline/vendor/init.vendor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
@@ -100,8 +98,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
-    $(LOCAL_PATH)/etc/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/etc/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
+    device/qcom/mainline/etc/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    device/qcom/mainline/etc/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
 # Enable BT
 PRODUCT_PACKAGES += \
@@ -135,8 +133,8 @@ PRODUCT_PACKAGES += \
 
 # audio policy configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/etc/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
+    device/qcom/mainline/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/qcom/mainline/etc/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
@@ -148,25 +146,19 @@ PRODUCT_COPY_FILES += \
 
 # Copy media codecs config file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    device/qcom/mainline/etc/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    $(LOCAL_PATH)/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy \
-    $(LOCAL_PATH)/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    device/qcom/mainline/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    device/qcom/mainline/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy \
+    device/qcom/mainline/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Copy hardware config file(s)
 PRODUCT_COPY_FILES +=  \
-    $(LOCAL_PATH)/etc/permissions/android.software.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.xml
-
-# Memtrack
-# PRODUCT_PACKAGES += \
-#     memtrack.default \
-#     android.hardware.memtrack@1.0-service \
-#     android.hardware.memtrack@1.0-impl
+    device/qcom/mainline/etc/permissions/android.software.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.xml
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -180,7 +172,7 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl-msm8916
+    android.hardware.health@2.1-impl-qcom
 
 # mkbootimg host tool to build boot.img separately
 PRODUCT_HOST_PACKAGES := \
@@ -202,7 +194,7 @@ PRODUCT_PACKAGES += \
 
 # Copy standard platform config files
 PRODUCT_COPY_FILES +=  \
-    $(LOCAL_PATH)/ueventd.common.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    device/qcom/mainline/platform/ueventd.common.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
     frameworks/native/data/etc/android.software.cts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.cts.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/android.software.backup.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.backup.xml \
@@ -218,9 +210,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.secure_lock_screen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.secure_lock_screen.xml
 
 # Copy firmware files
-$(call inherit-product-if-exists, $(LOCAL_PATH)/firmware/device.mk)
+$(call inherit-product-if-exists, device/qcom/mainline/firmware/device.mk)
 
-$(call inherit-product, device/generic/msm8916/shared/modem_manager/device_mm.mk)
+$(call inherit-product, device/qcom/mainline/modem_manager/device_mm.mk)
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/generic/msm8916
+    device/qcom/mainline \
+    external/mesa3d

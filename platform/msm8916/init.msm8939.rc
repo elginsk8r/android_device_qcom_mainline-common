@@ -1,0 +1,41 @@
+on property:sys.boot_completed=1
+    swapon_all /vendor/etc/fstab.zram
+
+on init
+    # TODO: Avoid going into suspend until it works properly
+    write /sys/power/wake_lock MSM8939.DisableSuspend
+
+    # msm8939 doesn't support compression (for now, at least)
+    export MINIGBM_DEBUG nocompression
+    # work-around graphical artifacts (fixed in mesa main)
+    # export FD_MESA_DEBUG nobin
+
+on init
+    # Initialize cpusets to boot-time values
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
+    write /dev/cpuset/top-app/cpus 0-7
+
+on early-boot
+    # Bluetooth
+    chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+
+on property:sys.boot_completed=1
+    # update cpuset now that processors are up
+    # Foreground should contain most cores (7 is reserved for top-app)
+    write /dev/cpuset/foreground/cpus 0-6
+
+    # top-app gets all cpus (including reserved #7)
+    write /dev/cpuset/top-app/cpus 0-7
+
+    #background contains a small subset (generally one little core)
+    write /dev/cpuset/background/cpus 0
+
+    # add system-background cpuset, a new cpuset for system services
+    # that should not run on larger cores
+    # system-background is for system tasks that should only run on
+    # little cores, not on bigs to be used only by init
+    write /dev/cpuset/system-background/cpus 0-3

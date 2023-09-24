@@ -25,4 +25,4 @@ BOARD_BUILD_AOSPEXT_MODEMMANAGER := true
 BOARD_MODEMMANAGER_SRC_DIR := glodroid/vendor/modem_manager
 BOARD_MODEMMANAGER_PATCHES_DIRS := glodroid/configuration/common/modem/patches-modemmanager
 
-DEVICE_MANIFEST_FILE += device/generic/msm8916/shared/modem_manager/android.hardware.radio.xml
+DEVICE_MANIFEST_FILE += device/qcom/mainline/modem_manager/android.hardware.radio.xml

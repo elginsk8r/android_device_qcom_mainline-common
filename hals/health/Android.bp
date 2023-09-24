@@ -1,6 +1,6 @@
 cc_library_shared {
-    name: "android.hardware.health@2.1-impl-msm8916",
-    stem: "android.hardware.health@2.0-impl-2.1-msm8916",
+    name: "android.hardware.health@2.1-impl-qcom",
+    stem: "android.hardware.health@2.0-impl-2.1-qcom",
 
     // Install to vendor and recovery.
     proprietary: true,

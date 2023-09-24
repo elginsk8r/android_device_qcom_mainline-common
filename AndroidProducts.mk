@@ -10,9 +10,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    idol3:$(LOCAL_DIR)/idol3/idol3.mk \
-    idol347:$(LOCAL_DIR)/idol347/idol347.mk \
-    kiwi:$(LOCAL_DIR)/kiwi/kiwi.mk
+    device/qcom/mainline/products/idol3/idol3.mk \
+    device/qcom/mainline/products/idol347/idol347.mk \
+    device/qcom/mainline/products/kiwi/kiwi.mk
 
 COMMON_LUNCH_CHOICES := \
     idol3-userdebug \
