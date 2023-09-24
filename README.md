@@ -1,4 +1,4 @@
-# device/generic/msm8916 (AOSP device config for MSM8916 & MSM8939 devices)
+# device/qcom/mainline (AOSP device config for MSM8916 & MSM8939 devices)
 
 This device repo aims to support booting AOSP on MSM8916 & MSM8939 devices supported by the mainline Linux kernel.
 

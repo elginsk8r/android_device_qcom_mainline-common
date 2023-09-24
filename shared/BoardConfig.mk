@@ -84,16 +84,16 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_USES_TINYHAL_AUDIO := true
 
 BOARD_SEPOLICY_DIRS += \
-    device/generic/msm8916/shared/sepolicy \
+    device/qcom/mainline/shared/sepolicy \
     system/bt/vendor_libs/linux/sepolicy
 
 # New BT fix : https://android-review.googlesource.com/c/device/linaro/dragonboard/+/2103025/
-TARGET_PRODUCT_PROP := device/generic/msm8916/shared/product.prop
+TARGET_PRODUCT_PROP := device/qcom/mainline/shared/product.prop
 
-include device/generic/msm8916/shared/modem_manager/board_mm.mk
+include device/qcom/mainline/shared/modem_manager/board_mm.mk
 
-DEVICE_MANIFEST_FILE := device/generic/msm8916/shared/manifest.xml
-DEVICE_MATRIX_FILE := device/generic/msm8916/shared/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := device/qcom/mainline/shared/manifest.xml
+DEVICE_MATRIX_FILE := device/qcom/mainline/shared/compatibility_matrix.xml
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
