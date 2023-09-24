@@ -85,6 +85,10 @@ PRODUCT_PACKAGES += \
     wificond
 
 PRODUCT_PACKAGES += \
+    pd-mapper \
+    qrtr-ns \
+    qrtr-cfg \
+    qrtr-lookup \
     rmtfs \
     tqftpserv
 

@@ -15,6 +15,7 @@ on post-fs
     # retry.
     write /sys/class/remoteproc/remoteproc0/state start
     write /sys/class/remoteproc/remoteproc1/state start
+    write /sys/class/remoteproc/remoteproc2/state start
 
 on early-boot
     mount debugfs debugfs /sys/kernel/debug
