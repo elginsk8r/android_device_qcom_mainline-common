@@ -10,17 +10,17 @@
 #
 
 PRODUCT_MAKEFILES := \
-    axolotl:$(LOCAL_DIR)/axolotl/axolotl.mk \
-    beryllium:$(LOCAL_DIR)/beryllium/beryllium.mk \
-    enchilada:$(LOCAL_DIR)/enchilada/enchilada.mk \
-    idol3:$(LOCAL_DIR)/idol3/idol3.mk \
-    idol347:$(LOCAL_DIR)/idol347/idol347.mk \
-    kiwi:$(LOCAL_DIR)/kiwi/kiwi.mk
+    $(LOCAL_DIR)/axolotl/aosp_axolotl.mk \
+    $(LOCAL_DIR)/beryllium/aosp_beryllium.mk \
+    $(LOCAL_DIR)/enchilada/aosp_enchilada.mk \
+    $(LOCAL_DIR)/idol3/aosp_idol3.mk \
+    $(LOCAL_DIR)/idol347/aosp_idol347.mk \
+    $(LOCAL_DIR)/kiwi/aosp_kiwi.mk
 
 COMMON_LUNCH_CHOICES := \
-    axolotl-userdebug \
-    beryllium-userdebug \
-    enchilada-userdebug \
-    idol3-userdebug \
-    idol347-userdebug \
-    kiwi-userdebug
+    aosp_axolotl-userdebug \
+    aosp_beryllium-userdebug \
+    aosp_enchilada-userdebug \
+    aosp_idol3-userdebug \
+    aosp_idol347-userdebug \
+    aosp_kiwi-userdebug
