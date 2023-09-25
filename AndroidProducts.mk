@@ -10,11 +10,11 @@
 #
 
 PRODUCT_MAKEFILES := \
-    idol3:$(LOCAL_DIR)/idol3/idol3.mk \
-    idol347:$(LOCAL_DIR)/idol347/idol347.mk \
-    kiwi:$(LOCAL_DIR)/kiwi/kiwi.mk
+    $(LOCAL_DIR)/idol3/aosp_idol3.mk \
+    $(LOCAL_DIR)/idol347/aosp_idol347.mk \
+    $(LOCAL_DIR)/kiwi/aosp_kiwi.mk
 
 COMMON_LUNCH_CHOICES := \
-    idol3-userdebug \
-    idol347-userdebug \
-    kiwi-userdebug
+    aosp_idol3-userdebug \
+    aosp_idol347-userdebug \
+    aosp_kiwi-userdebug
