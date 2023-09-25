@@ -18,3 +18,17 @@ COMMON_LUNCH_CHOICES := \
     aosp_idol3-userdebug \
     aosp_idol347-userdebug \
     aosp_kiwi-userdebug
+
+ifneq ($(wildcard $(SRC_EVERVOLV_DIR)/config/common.mk),)
+
+PRODUCT_MAKEFILES += \
+    $(LOCAL_DIR)/idol3/ev_idol3.mk \
+    $(LOCAL_DIR)/idol347/ev_idol347.mk \
+    $(LOCAL_DIR)/kiwi/ev_kiwi.mk
+
+COMMON_LUNCH_CHOICES += \
+    ev_idol3-userdebug \
+    ev_idol347-userdebug \
+    ev_kiwi-userdebug
+
+endif
