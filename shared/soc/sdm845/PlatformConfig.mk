@@ -36,6 +36,17 @@ BOARD_KERNEL_CMDLINE     += androidboot.boot_devices=soc@0/1d84000.ufshc
 BOARD_KERNEL_CMDLINE     += firmware_class.path=/vendor/firmware/ init=/init printk.devkmsg=on
 BOARD_KERNEL_CMDLINE     += deferred_probe_timeout=30 androidboot.selinux=permissive
 
+# Kernel
+BOARD_KERNEL_LEGACY_DTB_APPEND ?= true
+BOARD_KERNEL_IMAGE_NAME ?= Image.gz-dtb
+TARGET_KERNEL_SOURCE := kernel/common
+TARGET_KERNEL_CONFIG := sdm845-android_defconfig
+
+# Kernel modules
+BOARD_GENERIC_RAMDISK_MODULES :=
+BOARD_GENERIC_RAMDISK_KERNEL_MODULES_LOAD := $(filter-out $(BOARD_GENERIC_RAMDISK_MODULES),$(TARGET_KERNEL_MODULE_LIST))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(filter $(BOARD_GENERIC_RAMDISK_MODULES),$(TARGET_KERNEL_MODULE_LIST))
+
 # Image Configuration
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864 #64M

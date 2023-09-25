@@ -25,8 +25,6 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_DEVICE := beryllium
 PRODUCT_NAME := aosp_beryllium
 
-# The following are too big for ramdisk
-TARGET_VENDOR_MODULES := %/msm.ko
 $(call inherit-product, device/qcom/mainline/beryllium/device.mk)
 
 PRODUCT_PACKAGES += \

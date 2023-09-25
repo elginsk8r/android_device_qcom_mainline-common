@@ -15,7 +15,6 @@
 #
 
 $(call inherit-product, device/qcom/mainline/shared/soc/msm8916/platform.mk)
-$(call inherit-product, device/qcom/mainline/shared/kernel.mk)
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.idol3 \
@@ -32,4 +31,3 @@ PRODUCT_PACKAGES += lights.idol3
 
 # Create mountpoints and symlinks for firmware files
 PRODUCT_PACKAGES += idol3_firmware
-

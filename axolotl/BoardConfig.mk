@@ -8,6 +8,9 @@ TARGET_SCREEN_DENSITY := 400
 # Kernel/boot.img Configuration
 BOARD_KERNEL_CMDLINE += androidboot.hardware=axolotl
 
+# Kernel
+TARGET_KERNEL_DTB := sdm845-shift-axolotl.dtb
+
 ##### Partition handling
 
 BOARD_DYNAMIC_PARTITION_ENABLE := true

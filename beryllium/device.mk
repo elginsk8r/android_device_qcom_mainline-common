@@ -15,7 +15,6 @@
 #
 
 $(call inherit-product, device/qcom/mainline/shared/soc/sdm845/platform.mk)
-$(call inherit-product, device/qcom/mainline/shared/kernel.mk)
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.beryllium \

@@ -9,6 +9,9 @@ TARGET_SCREEN_DENSITY := 400
 # Kernel/boot.img Configuration
 BOARD_KERNEL_CMDLINE     += androidboot.hardware=beryllium
 
+# Kernel
+TARGET_KERNEL_DTB := msm8939-alcatel-idol3.dtb
+
 # Image Configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 57453555712

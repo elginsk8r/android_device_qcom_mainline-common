@@ -25,8 +25,6 @@ PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_DEVICE := enchilada
 PRODUCT_NAME := aosp_enchilada
 
-# The following are too big for ramdisk
-TARGET_VENDOR_MODULES := %/qcom_q6v5_adsp.ko %/qcom_q6v5_mss.ko %/qcom_q6v5_pas.ko
 $(call inherit-product, device/qcom/mainline/enchilada/device.mk)
 
 PRODUCT_PACKAGES += \
