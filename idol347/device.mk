@@ -28,18 +28,3 @@ PRODUCT_PACKAGES := audio.primary.idol347
 
 # Create mountpoints and symlinks for firmware files
 PRODUCT_PACKAGES += idol347_firmware
-
-ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE := mainline
-endif
-
-KERNEL_MODS := $(wildcard device/qcom/mainline/shared/prebuilt-kernel/android-$(TARGET_KERNEL_USE)/*.ko)
-KERNEL_MODS += $(wildcard device/qcom/mainline/shared/prebuilt-kernel/android-$(TARGET_KERNEL_USE)/panels/$(TARGET_PRODUCT)/*.ko)
-
-# Following modules go to vendor partition
-VENDOR_KERN_MODS :=
-BOARD_VENDOR_KERNEL_MODULES := $(filter $(VENDOR_KERN_MODS),$(KERNEL_MODS))
-
-# All other modules go to ramdisk
-BOARD_GENERIC_RAMDISK_KERNEL_MODULES := $(filter-out $(VENDOR_KERN_MODS),$(KERNEL_MODS))
-

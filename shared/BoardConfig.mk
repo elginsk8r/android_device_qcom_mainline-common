@@ -46,6 +46,18 @@ BOARD_KERNEL_CMDLINE      += firmware_class.path=/vendor/firmware/ init=/init pr
 BOARD_KERNEL_CMDLINE      += deferred_probe_timeout=60
 #BOARD_KERNEL_CMDLINE      += log_buf_len=15M audit_backlog_limit=8192 drm.debug=0x1f
 
+# Kernel
+BOARD_KERNEL_LEGACY_DTB_APPEND ?= true
+BOARD_KERNEL_IMAGE_NAME ?= Image.gz-dtb
+TARGET_KERNEL_SOURCE := kernel/common
+TARGET_KERNEL_CONFIG := msm8916-android_defconfig
+TARGET_KERNEL_MODULE_LIST := $(strip $(shell cat device/qcom/mainline/shared/modules.load))
+
+# Kernel modules
+BOARD_GENERIC_RAMDISK_MODULES :=
+BOARD_GENERIC_RAMDISK_KERNEL_MODULES_LOAD := $(filter-out $(BOARD_GENERIC_RAMDISK_MODULES),$(TARGET_KERNEL_MODULE_LIST))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(filter $(BOARD_GENERIC_RAMDISK_MODULES),$(TARGET_KERNEL_MODULE_LIST))
+
 # Image Configuration
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 32000000 # keep some place for lk2nd #33554432 #32M
