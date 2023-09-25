@@ -1,4 +1,4 @@
-include device/qcom/mainline/shared/BoardConfig.mk
+include device/qcom/mainline/shared/soc/sdm845/PlatformConfig.mk
 
 # Board Information
 TARGET_BOOTLOADER_BOARD_NAME := axolotl

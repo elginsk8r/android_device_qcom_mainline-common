@@ -1,4 +1,4 @@
-include device/qcom/mainline/shared/BoardConfig.mk
+include device/qcom/mainline/shared/soc/sdm845/PlatformConfig.mk
 
 # Copied from https://github.com/LineageOS/android_device_xiaomi_sdm845-common/blob/lineage-16.0/BoardConfigCommon.mk
 # Board Information

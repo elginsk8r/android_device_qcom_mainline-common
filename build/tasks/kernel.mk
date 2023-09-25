@@ -1,10 +1,12 @@
-ifneq ($(filter axolotl beryllium enchilada, $(TARGET_DEVICE)),)
+ifneq ($(wildcard $(TARGET_PREBUILT_KERNEL_PATH)/Image.gz),)
 
-IMAGE_GZ := device/qcom/mainline/shared/prebuilt-kernel/android-$(TARGET_KERNEL_USE)/Image.gz
-DTB := $(wildcard device/qcom/mainline/shared/prebuilt-kernel/android-$(TARGET_KERNEL_USE)/*.dtb)
+PREBUILT_KERNEL_IMAGE := $(TARGET_PREBUILT_KERNEL_PATH)/Image.gz
+PREBUILT_KERNEL_DTB := $(wildcard $(TARGET_PREBUILT_KERNEL_PATH)/*.dtb)
 
-$(PRODUCT_OUT)/kernel: $(IMAGE_GZ) $(DTB)
-	cat $(IMAGE_GZ) $(DTB) > $@
+ifneq ($(PREBUILT_KERNEL_DTB),)
+
+$(PRODUCT_OUT)/kernel: $(PREBUILT_KERNEL_IMAGE) $(PREBUILT_KERNEL_DTB)
+	cat $(PREBUILT_KERNEL_IMAGE) $(PREBUILT_KERNEL_DTB) > $@
 
 droidcore: $(PRODUCT_OUT)/kernel
 

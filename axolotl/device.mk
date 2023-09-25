@@ -14,12 +14,15 @@
 # limitations under the License.
 #
 
+$(call inherit-product, device/qcom/mainline/shared/soc/sdm845/platform.mk)
+$(call inherit-product, device/qcom/mainline/shared/kernel.mk)
+
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.axolotl \
     $(LOCAL_PATH)/fstab.ramdisk:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.axolotl \
     device/qcom/mainline/shared/etc/audio.sdm845.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.axolotl.xml \
-    device/qcom/mainline/shared/init.sdm845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.axolotl.rc \
-    device/qcom/mainline/shared/init.sdm845.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.axolotl.usb.rc \
+    device/qcom/mainline/shared/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.axolotl.rc \
+    device/qcom/mainline/shared/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.axolotl.usb.rc \
     device/qcom/mainline/shared/key_layout.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/axolotl.kl
 
 # Audio
