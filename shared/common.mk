@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
 
 # Haptics
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.1-service.ff
+    android.hardware.vibrator-service.example
 
 # Copy standard platform config files
 PRODUCT_COPY_FILES +=  \
