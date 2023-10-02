@@ -15,7 +15,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/enchilada/aosp_enchilada.mk \
     $(LOCAL_DIR)/idol3/aosp_idol3.mk \
     $(LOCAL_DIR)/idol347/aosp_idol347.mk \
-    $(LOCAL_DIR)/kiwi/aosp_kiwi.mk
+    $(LOCAL_DIR)/kiwi/aosp_kiwi.mk \
+    $(LOCAL_DIR)/hammerhead/aosp_hammerhead.mk
 
 COMMON_LUNCH_CHOICES := \
     aosp_axolotl-userdebug \
@@ -23,7 +24,8 @@ COMMON_LUNCH_CHOICES := \
     aosp_enchilada-userdebug \
     aosp_idol3-userdebug \
     aosp_idol347-userdebug \
-    aosp_kiwi-userdebug
+    aosp_kiwi-userdebug \
+    aosp_hammerhead-userdebug
 
 ifneq ($(wildcard $(SRC_EVERVOLV_DIR)/config/common.mk),)
 
@@ -33,7 +35,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/enchilada/ev_enchilada.mk \
     $(LOCAL_DIR)/idol3/ev_idol3.mk \
     $(LOCAL_DIR)/idol347/ev_idol347.mk \
-    $(LOCAL_DIR)/kiwi/ev_kiwi.mk
+    $(LOCAL_DIR)/kiwi/ev_kiwi.mk \
+    $(LOCAL_DIR)/hammerhead/ev_hammerhead.mk
 
 COMMON_LUNCH_CHOICES := \
     ev_axolotl-userdebug \
@@ -41,6 +44,7 @@ COMMON_LUNCH_CHOICES := \
     ev_enchilada-userdebug \
     ev_idol3-userdebug \
     ev_idol347-userdebug \
-    ev_kiwi-userdebug
+    ev_kiwi-userdebug \
+    ev_hammerhead-userdebug
 
 endif
