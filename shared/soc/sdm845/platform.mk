@@ -26,3 +26,7 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609
+
+# Init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vendor/init.sdm845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rc

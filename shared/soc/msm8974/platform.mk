@@ -20,3 +20,7 @@ $(call inherit-product, device/qcom/mainline/shared/common.mk)
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
+
+# Init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vendor/init.msm8974.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rc

@@ -87,9 +87,6 @@ PRODUCT_PACKAGES += \
     rmtfs \
     tqftpserv
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vendor/init.vendor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rc
-
 # Install scripts to set consistent Wifi MAC address
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/set_wlan_mac.rc:/system/etc/init/set_wlan_mac.rc \
