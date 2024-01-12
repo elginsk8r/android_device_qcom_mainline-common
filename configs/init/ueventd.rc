@@ -1,0 +1,7 @@
+firmware_directories /vendor/firmware_mnt/image/
+
+# ION
+/dev/ion	0664	system	system
+
+# Serial console
+/dev/ttyMSM*	0666	system	system
