@@ -66,9 +66,6 @@ include $(wildcard $(LOCAL_PATH)/properties/*.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_RECOVERY)/root/ueventd.qcom.rc
 
-# Scoped Storage
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
